@@ -18,7 +18,8 @@ public class GamePlayScreen extends AbstractScreen
 		super(game);
 		init();
 		initPlayerButton();
-
+		
+		
 	}
 
 	protected void init()
@@ -41,7 +42,9 @@ public class GamePlayScreen extends AbstractScreen
 			@Override
 			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button)
 			{
-			System.err.println("klik?");
+			
+				player.reactOnClick();
+				
 				return super.touchDown(event, x, y, pointer, button);
 			}
 		});

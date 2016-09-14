@@ -40,6 +40,7 @@ public class SplashScreen extends AbstractScreen
 		super.render(delta);
 
 		spirteBatch.begin();
+		
 		spirteBatch.draw(splashImg, 0, 0);
 		spirteBatch.end();
 	}
