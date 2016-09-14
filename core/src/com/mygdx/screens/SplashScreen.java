@@ -29,7 +29,8 @@ public class SplashScreen extends AbstractScreen
 
 	protected void init()
 	{
-		splashImg = new Texture("badlogic.jpg");
+		splashImg = new Texture("splash2.png");
+		
 
 	}
 
@@ -40,9 +41,7 @@ public class SplashScreen extends AbstractScreen
 		super.render(delta);
 		
 		spirteBatch.begin();
-		
 		spirteBatch.draw(splashImg, 0, 0);
-		
 		spirteBatch.end();
 	}
 }

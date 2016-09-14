@@ -9,14 +9,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 public class Player extends Image
 {
-	private final static int WIDHT = 77 ;
-	private final static int HEIGHT = 152;
+	private final static int WIDHT = 150 ;
+	private final static int HEIGHT = 120;
 	
-	private final static int STARTING_X = 200;
+	private final static int STARTING_X = 180;
 	private final static int STARTING_Y = 300;
 	
 	public Player(){
-		super(new Texture("badlogic.jpg"));
+		super(new Texture("serce.png"));
 		
 		this.setOrigin(WIDHT / 2, HEIGHT / 2);
 		this.setSize(WIDHT, HEIGHT);
@@ -46,7 +46,7 @@ public class Player extends Image
 		this.addAction(moveAction);
 		this.addAction(growAction);
 		
-		if (this.getHeight()>170){
+		if (this.getHeight()>136){
 			this.addAction(Actions.rotateBy(MathUtils.randomSign() * 360 , 0.3f));
 		
 		}
