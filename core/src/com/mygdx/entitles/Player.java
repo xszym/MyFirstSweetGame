@@ -15,6 +15,8 @@ public class Player extends Image
 	private final static int STARTING_X = 180;
 	private final static int STARTING_Y = 300;
 	
+	
+	//konstruktor
 	public Player(){
 		super(new Texture("serce.png"));
 		

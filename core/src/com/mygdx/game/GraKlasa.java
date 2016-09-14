@@ -14,7 +14,7 @@ public class GraKlasa extends Game {
 	
 	private Preferences pref;
 
-	public final static String GAME_NAME = "Gra Szymona xd";
+	public final static String GAME_NAME = "Serduszko :<3";
 	public final static int WIDTH = 480;
 	public final static int HEIGHT = 700;
 	

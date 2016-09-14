@@ -2,6 +2,7 @@ package com.mygdx.screens;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.mygdx.entitles.Player;
 import com.mygdx.game.GraKlasa;
@@ -12,7 +13,7 @@ import com.mygdx.ui.iClickCallback;
 
 public class GamePlayScreen extends AbstractScreen
 {
-	private Texture bg;
+	private Image bgImg;
 	private Player player;
 	private PlayerButton playerButton;
 	private ResetScoreButton resetScoreButton;
@@ -33,12 +34,20 @@ public class GamePlayScreen extends AbstractScreen
 
 	protected void init()
 	{
-		bg = new Texture("bg.jpg");
+		
+		initBG();
 		initPlayer();
 		initResetButton();
 		initPlayerButton();
 		initScoreLabel();
 
+	}
+
+	private void initBG()
+	{
+		bgImg = new Image(new Texture("bg.jpg"));
+		stage.addActor(bgImg);
+		
 	}
 
 	private void initResetButton()
@@ -88,9 +97,6 @@ public class GamePlayScreen extends AbstractScreen
 		super.render(delta);
 		update();
 		
-		spirteBatch.begin();
-		spirteBatch.draw(bg, 0, 0);
-		spirteBatch.end();
 		
 		spirteBatch.begin();
 		stage.draw();
