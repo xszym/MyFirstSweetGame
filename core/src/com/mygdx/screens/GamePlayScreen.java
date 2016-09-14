@@ -18,15 +18,15 @@ public class GamePlayScreen extends AbstractScreen
 		super(game);
 		init();
 		initPlayerButton();
-		
-		
+
 	}
 
 	protected void init()
 	{
+
 		initPlayer();
 	}
-	
+
 	private void initPlayerButton()
 	{
 		playerButton = new Button(new ButtonStyle());
@@ -34,21 +34,24 @@ public class GamePlayScreen extends AbstractScreen
 		playerButton.setHeight(360);
 		playerButton.setX(10);
 		playerButton.setY(170);
-		playerButton.setDebug(true);
-		
+		// playerButton.setDebug(true);
+
 		stage.addActor(playerButton);
-		
-		playerButton.addListener(new ClickListener(){
+
+		playerButton.addListener(new ClickListener()
+		{
 			@Override
 			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button)
 			{
-			
+
 				player.reactOnClick();
+				game.addPoints();
+				System.err.println("Points: " + game.getPoints());
 				
 				return super.touchDown(event, x, y, pointer, button);
 			}
 		});
-		
+
 	}
 
 	private void initPlayer()
@@ -63,7 +66,7 @@ public class GamePlayScreen extends AbstractScreen
 
 		super.render(delta);
 		update();
-		
+
 		spirteBatch.begin();
 		stage.draw();
 		spirteBatch.end();
