@@ -3,11 +3,13 @@ package com.mygdx.screens;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.mygdx.entitles.Player;
 import com.mygdx.game.GraKlasa;
 import com.mygdx.ui.PlayerButton;
 import com.mygdx.ui.ResetScoreButton;
+import com.mygdx.ui.Score1000;
 import com.mygdx.ui.ScoreLabel;
 import com.mygdx.ui.iClickCallback;
 
@@ -18,6 +20,8 @@ public class GamePlayScreen extends AbstractScreen
 	private PlayerButton playerButton;
 	private ResetScoreButton resetScoreButton;
 	private ScoreLabel scoreLabel;
+	private Label label1000;
+	
 
 	public GamePlayScreen(GraKlasa game)
 	{
@@ -26,8 +30,6 @@ public class GamePlayScreen extends AbstractScreen
 
 	private void initScoreLabel()
 	{
-		LabelStyle labelStyle = new LabelStyle();
-		labelStyle.font = new BitmapFont();
 		scoreLabel = new ScoreLabel();
 		stage.addActor(scoreLabel);
 	}
@@ -36,12 +38,26 @@ public class GamePlayScreen extends AbstractScreen
 	{
 		
 		initBG();
+		init1000();
 		initPlayer();
 		initResetButton();
 		initPlayerButton();
 		initScoreLabel();
-
+		
 	}
+
+	
+	
+	private void init1000()
+	{
+		
+		label1000 = new Score1000();
+		stage.addActor(label1000);
+		
+		
+	}
+
+
 
 	private void initBG()
 	{
@@ -105,6 +121,13 @@ public class GamePlayScreen extends AbstractScreen
 
 	private void update()
 	{
+		if (game.getPoints()>999){
+			label1000.setText(Score1000.gettekstprzy1000());
+			
+		}
+		else {	
+			label1000.setText("");
+		}
 		scoreLabel.setText("Points: " + game.getPoints());
 		stage.act();
 	}

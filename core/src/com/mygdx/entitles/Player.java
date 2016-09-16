@@ -51,6 +51,8 @@ public class Player extends Image
 		if (this.getHeight()>136){
 			this.addAction(Actions.rotateBy(MathUtils.randomSign() * 360 , 0.3f));
 		
+			
+		
 		}
 		
 	}
